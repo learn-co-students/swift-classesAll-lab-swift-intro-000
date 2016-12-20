@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+class RaceCar: Car {
+    let driver: String
+    var sponsors: [String]
+    
+    init(name: String, weight: Double, maxSpeed: Double, transmission: Transmission, cylinders: Int, milesPerGallon: Double, driver: String, sponsors: [String]) {
+        self.driver = 
+    }
+}
