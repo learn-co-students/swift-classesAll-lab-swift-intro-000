@@ -41,7 +41,7 @@ class Vehicle {
     }
     
     var speedConstantRate: Double {
-        return maxSpeed * 1/4
+        return maxSpeed * 0.1
     }
     
     init(name: String, weight: Double, maxSpeed: Double) {

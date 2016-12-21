@@ -9,7 +9,7 @@
 import Foundation
 
 class Car: Vehicle {
-    let transmission = Transmission
+    let transmission: Transmission
     let cylinders: Int
     let milesPerGallon: Double
     
