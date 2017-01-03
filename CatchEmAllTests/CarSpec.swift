@@ -13,7 +13,7 @@ import Nimble
 class CarSpec: QuickSpec {
     override func spec() {
         describe("Car") {
-            var car = Car(name: "Car", weight: 4079.0, maxSpeed: 130.0, transmission: .automatic, cylinders: 6, milesPerGallon: 24.0)
+            var car = Car(name: "Car", weight: 4079.0, maxSpeed: 130.0, transmission: .Automatic, cylinders: 6, milesPerGallon: 24.0)
 
             beforeEach {
                 car = Car(name: "Car", weight: 4079.0, maxSpeed: 130.0, transmission: .Automatic, cylinders: 6, milesPerGallon: 24.0)

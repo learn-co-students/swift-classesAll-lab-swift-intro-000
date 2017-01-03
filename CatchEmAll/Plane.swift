@@ -11,7 +11,18 @@ import Foundation
 class Plane: Vehicle {
     
     let maxAltitude: Double
-    var altitude: Double
+    var altitude: Double {
+        didSet {
+            if altitude < 0.0 {
+                altitude = 0.0
+            }
+            
+            if altitude > maxAltitude {
+                altitude = maxAltitude
+            }
+        }
+    }
+    
     var inFlight: Bool {
         return altitude > 0.0 && speed > 0.0
     }
@@ -42,6 +53,7 @@ class Plane: Vehicle {
         altitude += altitudeInterval
 //        altitude += maxAltitude * 0.1
 //        added the solution above for comparison
+//        having separated the codes into a computed property and a function works better than my initial plan.
         super.decelerate()
     }
     

@@ -78,13 +78,6 @@ class Vehicle {
     func turnLeft() {
         guard speed > 0.0 else { return }
         heading -= 90.0
-        speed -= 2.0
+        speed /= 2.0
     }
 }
-
-enum Transmission {
-    case automatic, manual
-}
-
-
-
