@@ -19,11 +19,11 @@ class RaceCar: Car {
     }
     
     override func accelerate() {
-        speed += speed + maxSpeed*(1/5)
+        speed += maxSpeed*(1/5)
     }
     
     override func decelerate() {
-        speed -= speed + maxSpeed*(1/5)
+        speed -= maxSpeed*(1/5)
     }
     
     func driftRight() {

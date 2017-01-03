@@ -14,7 +14,7 @@ class Vehicle {
     let maxSpeed: Double
     var speed: Double {
         didSet {
-            if speed > maxSpeed {
+            if speed > megaSpeed {
                 speed = maxSpeed
             }
             
@@ -34,6 +34,9 @@ class Vehicle {
             }
         }
     }
+    var megaSpeed: Double {
+        return maxSpeed
+    }
     
     init(name: String, weight: Double, maxSpeed: Double) {
         self.name = name
@@ -42,6 +45,8 @@ class Vehicle {
         self.speed = 0.0
         self.heading = 0.0
     }
+    
+    
     
     func goFast() {
         speed = maxSpeed
@@ -52,11 +57,11 @@ class Vehicle {
     }
     
     func accelerate() {
-        speed += speed + maxSpeed*(1/10)
+        speed += maxSpeed/10
     }
     
     func decelerate() {
-        speed -= speed + maxSpeed*(1/10)
+        speed -= maxSpeed/10
     }
     
     func turnRight() {

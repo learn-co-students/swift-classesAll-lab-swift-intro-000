@@ -47,22 +47,26 @@ class Plane: Vehicle {
     }
     
     func climb() {
-        altitude += altitude/10
-        speed -= speed/10
+        guard inFlight else {return}
+        altitude += maxAltitude/10
+        speed -= maxSpeed/10
     }
     
     func dive() {
-        altitude -= altitude/10
-        speed += speed/10
+        guard inFlight else {return}
+        altitude -= maxAltitude/10
+        speed += maxSpeed/10
 
     }
     
     func bankRight() {
+        guard inFlight else {return}
         heading += 45.0
         speed -= speed/10
     }
     
     func bankLeft() {
+        guard inFlight else {return}
         heading -= 45.0
         speed -= speed/10
     }
