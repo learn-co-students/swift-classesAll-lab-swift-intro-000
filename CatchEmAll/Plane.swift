@@ -7,3 +7,67 @@
 //
 
 import Foundation
+
+class Plane: Vehicle {
+    let maxAltitude: Double
+    var altitude: Double {
+        didSet {
+            if altitude > maxAltitude {
+                altitude = maxAltitude
+            }
+            
+            if altitude < 0.0 {
+                altitude = 0.0
+            }
+        }
+    }
+    var inFlight: Bool {
+        if altitude > 0.0 && speed > 0.0 {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    init(name: String, weight: Double, maxSpeed: Double, maxAltitude: Double) {
+        self.maxAltitude = maxAltitude
+        self.altitude = 0.0
+        super.init(name: name, weight: weight, maxSpeed: maxSpeed)
+    }
+    
+    func takeOff() {
+        guard !inFlight else { return }
+        speed = maxSpeed/10
+        altitude = maxAltitude/10
+    }
+    
+    func land() {
+        speed = 0.0
+        altitude = 0.0
+    }
+    
+    func climb() {
+        guard inFlight else {return}
+        altitude += maxAltitude/10
+        speed -= maxSpeed/10
+    }
+    
+    func dive() {
+        guard inFlight else {return}
+        altitude -= maxAltitude/10
+        speed += maxSpeed/10
+
+    }
+    
+    func bankRight() {
+        guard inFlight else {return}
+        heading += 45.0
+        speed -= speed/10
+    }
+    
+    func bankLeft() {
+        guard inFlight else {return}
+        heading -= 45.0
+        speed -= speed/10
+    }
+}
