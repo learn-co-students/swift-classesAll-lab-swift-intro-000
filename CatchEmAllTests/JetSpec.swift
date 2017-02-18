@@ -80,7 +80,7 @@ class JetSpec: QuickSpec {
 
                 it("should not increase the plane's altitude beyond its maximum altitude") {
                     plane.speed = 320.0
-                    plane.altitude = plane.maxAltitude * 0.95
+                    plane.altitude = plane.maxAltitude * 0.85
                     plane.climb()
                     expect(plane.altitude).to(beCloseTo(plane.maxAltitude))
                     expect(plane.speed).to(beCloseTo(320.0 - plane.maxSpeed * 0.1))
