@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+class Jet: Plane {
+    override var altitudeInterval: Double {
+        return maxAltitude / 5.0
+    }
+    
+    func afterburner() {
+        guard inFlight else { return }
+        guard speed == maxSpeed else { return }
+        speed = maxSpeed * 2.0
+    }
+}
