@@ -13,6 +13,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let plane = Plane(name: "Boing", weight: 970000.0, maxSpeed: 614.0, maxAltitude: 43000.0)
+        
+        plane.takeOff()
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
