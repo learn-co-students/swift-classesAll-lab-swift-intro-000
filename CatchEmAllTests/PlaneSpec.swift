@@ -101,7 +101,7 @@ class PlaneSpec: QuickSpec {
                     plane.altitude = 30000.0
                     plane.dive()
                     expect(plane.altitude).to(beCloseTo(30000.0 - plane.maxAltitude / 10.0))
-                    expect(plane.speed).to(beCloseTo(320.0 + plane.maxSpeed * 0.1))
+                    expect(plane.speed).to(beCloseTo(320.0))
                     expect(plane.inFlight).to(beTrue())
                 }
 
@@ -110,7 +110,7 @@ class PlaneSpec: QuickSpec {
                     plane.altitude = 10.0
                     plane.dive()
                     expect(plane.altitude).to(beCloseTo(0.0))
-                    expect(plane.speed).to(beCloseTo(320.0 + plane.maxSpeed * 0.1))
+                    expect(plane.speed).to(beCloseTo(320.0))
                     expect(plane.inFlight).to(beFalse())
                 }
 
@@ -127,7 +127,7 @@ class PlaneSpec: QuickSpec {
                     plane.speed = 320.0
                     plane.altitude = 30000.0
                     plane.bankRight()
-                    expect(plane.speed).to(beCloseTo(320.0 * 0.9))
+                    expect(plane.speed).to(beCloseTo(258.6))
                     expect(plane.heading).to(beCloseTo(45.0))
                     expect(plane.inFlight).to(beTrue())
                 }
@@ -144,7 +144,7 @@ class PlaneSpec: QuickSpec {
                     plane.altitude = 30000.0
                     plane.heading = 355.0
                     plane.bankRight()
-                    expect(plane.speed).to(beCloseTo(320.0 * 0.9))
+                    expect(plane.speed).to(beCloseTo(258.6))
                     expect(plane.heading).to(beCloseTo(40.0))
                     expect(plane.inFlight).to(beTrue())
                 }
@@ -162,7 +162,7 @@ class PlaneSpec: QuickSpec {
                     plane.speed = 320.0
                     plane.altitude = 30000.0
                     plane.bankLeft()
-                    expect(plane.speed).to(beCloseTo(320.0 * 0.9))
+                    expect(plane.speed).to(beCloseTo(258.6))
                     expect(plane.heading).to(beCloseTo(315.0))
                     expect(plane.inFlight).to(beTrue())
                 }
@@ -179,7 +179,7 @@ class PlaneSpec: QuickSpec {
                     plane.altitude = 30000.0
                     plane.heading = 10.0
                     plane.bankLeft()
-                    expect(plane.speed).to(beCloseTo(320.0 * 0.9))
+                    expect(plane.speed).to(beCloseTo(258.6))
                     expect(plane.heading).to(beCloseTo(325.0))
                     expect(plane.inFlight).to(beTrue())
                 }
