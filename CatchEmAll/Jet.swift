@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+class Jet: Plane{
+    override var altitudeInterval: Double{
+        return maxAltitude * 0.2
+    }
+    override func climb() {
+        altitude += altitudeInterval
+    }
+    override func dive() {
+        altitude -= altitudeInterval
+    }
+}
