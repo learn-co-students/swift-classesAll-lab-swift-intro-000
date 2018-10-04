@@ -13,10 +13,10 @@ import Nimble
 class JetSpec: QuickSpec {
     override func spec() {
         describe("Jet") {
-            var plane = Jet(name: "SR-71", weight: 170000.0, maxSpeed: 2531.99, maxAltitude: 100000.0)
+            var plane = Jet(maxAltitude: 100000.0, name: "SR-71", weight: 170000.0, maxSpeed: 2531.99)
 
             beforeEach {
-                plane = Jet(name: "SR-71", weight: 170000.0, maxSpeed: 2531.99, maxAltitude: 100000.0)
+                plane = Jet(maxAltitude: 100000.0, name: "SR-71", weight: 170000.0, maxSpeed: 2531.99)
             }
 
             describe("initializers") {
