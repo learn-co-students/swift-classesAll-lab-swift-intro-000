@@ -7,3 +7,23 @@
 //
 
 import Foundation
+
+class Jet: Plane {
+    override func climb() {
+        guard inFlight else { return }
+        altitude += (maxAltitude / 5.0)
+        super.decelerate()
+    }
+    
+    override func dive() {
+        guard inFlight else { return }
+        altitude -= (maxAltitude / 5.0)
+        super.accelerate()
+    }
+    
+    func afterburner() {
+        if speed == maxSpeed && inFlight{
+            speed = maxSpeed * 2.0
+        }
+    }
+}
